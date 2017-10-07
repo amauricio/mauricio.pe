@@ -1,0 +1,10 @@
+version: '2'
+services:
+ app:
+  build: .
+  volumes:
+   - ./:/var/lib/ghost/content/
+  ports:
+   - "127.0.0.1:8080:2368"
+  environment:
+   - NODE_ENV=development
