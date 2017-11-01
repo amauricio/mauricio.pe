@@ -1,0 +1,27 @@
+{{#post}}
+
+  <main class='contentPost'>
+    <article class="{{post_class}}">
+
+      <header class="postTitle">
+        <h1>{{title}}</h1>
+        <section>
+          <time datetime="{{date format="DD-MM-YYYY"}}">{{date timeago='true'}}</time>
+        </section>
+      </header>
+
+      <section class="postBody">
+        {{content}}
+      </section>
+
+    </article>
+  </main>
+  
+
+
+  <div class="fix">
+      <img src="/assets/./image/box.gif?v=19d8c7584b" title="toTop" id="toTop">
+  </div>
+
+
+{{/post}}

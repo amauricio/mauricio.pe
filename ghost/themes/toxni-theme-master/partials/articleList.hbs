@@ -1,0 +1,25 @@
+<div class="listBox">
+
+  {{#foreach posts}}
+  <div class='item-post-block'>
+        <a href="{{url}}">
+          <article href="{{url}}" class="listItem">
+            <div class="title">
+              <h4>
+                <span>{{{title}}}</span>
+              </h4>
+            </div>
+          </article>
+        </a>
+        <div class='meta'>
+          {{#foreach tags}}
+              <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">
+                {{name}}</a>
+          {{/foreach}}
+          <span>{{date timeago="true"}}</span>
+        </div>
+    </div>
+  {{/foreach}}
+</div>
+
+{{pagination}}

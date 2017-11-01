@@ -1,0 +1,40 @@
+{{!< default}}
+<div class="indexBox" id="indexBox">
+  {{#author}}
+      {{#if profile_image}}
+      <div class='header-profile'>
+        <div class='profile_image'>
+          <img src="{{profile_image}}" alt="{{name}}'s Picture" />
+        </div>
+        <div class='header-data'>
+          <h1 class="author-title">{{name}}</h1>
+          {{#if bio}}<p class="author-bio">{{bio}}</p>{{/if}}
+          <section class="author-profile">   
+          <div class="author-meta">he publicado
+          {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}},
+          muchos de ellos acerca de
+          {{#get "tags" limit="all" include="count.posts" order="count.posts desc"}}
+                  {{#foreach tags limit="3"}}
+                    <a href="/tag/{{slug}}">{{name}}</a>,
+                  {{/foreach}}
+          {{/get}}
+          entre otras cosas más, la última publicación que hice fue
+          {{#get "posts" limit="1" as |recents|}}
+              {{#foreach recents}}
+              <a href="{{url}}">{{title}}</a>.
+              {{/foreach}}
+          {{/get}}
+          </div>
+        </section>
+        </div>
+        <div class='about-me'>
+          <h3></h3>
+        </div>
+      </div>
+      {{/if}}
+
+    
+  {{/author}}
+  
+
+</div>

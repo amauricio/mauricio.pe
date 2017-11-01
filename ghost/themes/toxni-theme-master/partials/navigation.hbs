@@ -1,0 +1,11 @@
+
+<div class="navBox">
+	{{> "brief" }}
+  <ul>
+  {{#foreach navigation}}
+    <li class="navItem">
+      <a href="{{url absolute="true"}}" class="nav {{#if current}} nav-current{{/if}} nav-{{slug}}">{{label}}</a>
+    </li>
+  {{/foreach}}
+  </ul>
+</div>

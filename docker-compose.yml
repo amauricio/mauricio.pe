@@ -1,9 +1,10 @@
-version: '2'
+version: '3'
 services:
  app:
-  build: .
+  build: ./ghost
   volumes:
-   - ./:/var/lib/ghost/content/
+   - ./ghost/:/var/lib/ghost/content/
+   - ./server:/var/lib/ghost/current/
   ports:
    - "127.0.0.1:8080:2368"
   environment:
